@@ -1,1 +1,0 @@
-<div style="background: gray;width:500px;height:100px">The Footer   footer.jsp</div>

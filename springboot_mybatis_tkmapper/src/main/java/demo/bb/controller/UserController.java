@@ -79,21 +79,16 @@ public class UserController<E> {
 	 * @return
 	 */
 	@RequestMapping("insertList")
-	public Object insertList() {
+	public Object insertList(String username) {
 
 		List<User> us = new ArrayList();
 		User u1 = new User();
-		u1.setUsername("tom1");
+		u1.setUsername(username);
 
-		User u11 = new User();
-		u11.setUsername("tom2");
-		User u111 = new User();
-		u111.setUsername("tom3");
-		us.add(u111);
-		us.add(u11);
 		us.add(u1);
-		int i = this.userMapper.insertList(us);
-		// this.userMapper.select
+		int i = this.userMapper.insert(u1);
+		
+		System.out.print(u1.getUid());
 		return i;
 	}
 

@@ -1,6 +1,8 @@
 package demo.bb.entity;
 
 import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,15 +11,19 @@ public class User {
 
 	@Id
 	@Column(name="uid")
-	private Long uid;
+	//@GeneratedValue(strategy = GenerationType.IDENTITY,generator = "select uuid()")
+	@GeneratedValue(generator="UUID")
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private String uid;
 	@Column(name="username")
 	private String username;
 	@Column(name="password")
 	private String password;
-	public Long getUid() {
+	public String getUid() {
 		return uid;
 	}
-	public void setUid(Long uid) {
+	public void setUid(String uid) {
 		this.uid = uid;
 	}
 	public String getUsername() {

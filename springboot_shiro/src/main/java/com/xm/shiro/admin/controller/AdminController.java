@@ -117,6 +117,9 @@ public class AdminController {
 
         	UsernamePasswordToken token = new UsernamePasswordToken(nickname, pswd);
             Subject subject = SecurityUtils.getSubject();
+            
+            // boolean hasRole = subject.hasRole("user");//判断有无角色
+            
 			subject.login(token);
             boolean b = subject.isAuthenticated();
             System.out.println(b);

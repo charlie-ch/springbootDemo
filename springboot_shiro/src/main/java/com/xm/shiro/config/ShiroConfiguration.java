@@ -73,7 +73,7 @@ public class ShiroConfiguration {
 //        shiroFilterFactoryBean.setFilters(filters);
         System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
         Map<String, String> filterChainDefinitionManager = new LinkedHashMap();
-        filterChainDefinitionManager.put("/logout", "logout");
+        filterChainDefinitionManager.put("/logout", "logout");//注销,访问此路径，可直接注销，不用手动写控制方法
         filterChainDefinitionManager.put("/user/**", "authc,roles[user]");
         filterChainDefinitionManager.put("/shop/**", "authc,roles[shop]");
         filterChainDefinitionManager.put("/admin/**", "authc,roles[admin]");

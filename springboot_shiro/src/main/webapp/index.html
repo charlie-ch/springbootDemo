@@ -2,10 +2,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>主页</title>
+<script type="text/javascript" src="/static/js/jquery1.8.3.min.js"></script>
+<script type="text/javascript">
+
+function getAll(){
+	$.ajax({
+		type:"get",
+		url:"/product/getAll",
+		success:function(res){
+			alert(res)
+		}
+	});
+}
+
+</script>
 </head>
 <body>
 主页
-index.html
+index.html<a href="/logout">注销</a><br/>
+<button type="button" onclick="getAll()">查询</button>
+
 </body>
 </html>

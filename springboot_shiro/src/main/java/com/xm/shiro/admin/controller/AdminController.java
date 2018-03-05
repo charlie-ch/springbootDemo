@@ -135,10 +135,10 @@ public class AdminController {
         return resultMap;
     }
     
-@RequestMapping("unauthorized")
-public String unauthorized(){
-	return "权限不足";
-}
+	@RequestMapping("unauthorized")
+	public String unauthorized(){
+		return "权限不足";
+	}
 
 
 }
